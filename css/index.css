@@ -1,0 +1,48 @@
+/* left pane */
+.host-item {
+  border-top: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.host-item__name {
+  width: calc(100% - 20px);
+}
+
+.host-add-btn {
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 0;
+}
+
+.host-add-btn .host-add-btn__icon {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 32px;
+}
+
+/* right pane */
+.right-pane {
+  padding-bottom: 40px;
+}
+
+.right-pane__textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 99%;
+  resize: none;
+  white-space: pre;
+  outline: 0;
+}
+
+.right-pane__btn-pane {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  height: 40px;
+}
+
+.right-pane__btn {
+  margin: 5px;
+}

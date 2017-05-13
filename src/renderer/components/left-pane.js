@@ -2,16 +2,22 @@ module.exports = {
   template: `
     <div class="left-pane pane pane-sm sidebar">
       <ul class="list-group">
-        <li class="host-item list-group-item active">
-          <div class="host-item__name pull-left">sample</div>
-          <div class="host-item__checkbox pull-right"><input type="checkbox"></div>
-        </li>
-        <li class="host-item list-group-item">
-          <div class="host-item__name pull-left">sample</div>
-          <div class="host-item__checkbox pull-right"><input type="checkbox"></div>
+        <li v-for="hostItem in hostList" :class="{ active: hostItem === selectedHostItem }" class="host-item list-group-item">
+          <div class="host-item__name pull-left">{{ hostItem.name }}</div>
+          <div class="host-item__checkbox pull-right"><input type="checkbox" :checked="hostItem.isActive()"></div>
         </li>
       </ul>
       <button class="host-add-btn btn btn-default"><span class="icon icon-plus host-add-btn__icon"></span></button>
     </div>
-  `
+  `,
+  props: {
+    hostList: {
+      type: Array,
+      default: () => []
+    },
+    selectedHostItem: {
+      type: Object,
+      default: null
+    }
+  }
 }

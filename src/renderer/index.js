@@ -8,12 +8,35 @@ module.exports = new Vue({
     <div class="window">
       <div class="window-content">
         <div class="pane-group">
-          <left-pane></left-pane>
-          <right-pane></right-pane>
+          <left-pane :host-list="hostList" :selected-host-item="selectedHostItem"></left-pane>
+          <right-pane :selected-host-item="selectedHostItem"></right-pane>
         </div>
       </div>
     </div>
   `,
+  data: {
+    hostList: [],
+    selectedHostItem: {}
+  },
+  created: function () {
+    this.hostList = [
+      {
+        name: 'default',
+        content: 'aaa',
+        isActive () {
+          return true
+        }
+      },
+      {
+        name: 'second',
+        content: 'bbb',
+        isActive () {
+          return false
+        }
+      }
+    ]
+    this.selectedHostItem = this.hostList[0]
+  },
   components: {
     leftPane,
     rightPane

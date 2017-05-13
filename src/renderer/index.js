@@ -8,8 +8,14 @@ module.exports = new Vue({
     <div class="window">
       <div class="window-content">
         <div class="pane-group">
-          <left-pane :host-list="hostList" :selected-host-item="selectedHostItem"></left-pane>
-          <right-pane :selected-host-item="selectedHostItem"></right-pane>
+          <left-pane
+            :host-list="hostList" :selected-host-item="selectedHostItem"
+            @select="selectHostItem" @add="addHostItem" @editname="editHostItemName" @activate="activateHostItem" @deactivate="deactivateHostItem">
+          </left-pane>
+          <right-pane
+            :selected-host-item="selectedHostItem"
+            @editcontent="editHostItemContent" @delete="deleteHostItem">
+          </right-pane>
         </div>
       </div>
     </div>
@@ -17,6 +23,22 @@ module.exports = new Vue({
   data: {
     hostList: [],
     selectedHostItem: {}
+  },
+  methods: {
+    selectHostItem () {
+    },
+    addHostItem () {
+    },
+    editHostItemName () {
+    },
+    activateHostItem () {
+    },
+    deactivateHostItem () {
+    },
+    editHostItemContent () {
+    },
+    deleteHostItem () {
+    }
   },
   created: function () {
     this.hostList = [

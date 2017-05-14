@@ -15,7 +15,7 @@ module.exports = new Vue({
           <host-editor-pane
             v-model="selectedHostItem.draftContent"
             :selected-host-item="selectedHostItem"
-            @editcontent="editHostItemContent" @resetcontent="resetHostItemDraftContent" @delete="deleteHostItem">
+            @save="saveHostItemContent" @reset="resetHostItemDraftContent" @delete="deleteHostItem">
           </host-editor-pane>
         </div>
       </div>
@@ -47,7 +47,7 @@ module.exports = new Vue({
     },
     deactivateHostItem () {
     },
-    editHostItemContent () {
+    saveHostItemContent () {
       this.selectedHostItem.content = this.selectedHostItem.draftContent
     },
     resetHostItemDraftContent () {

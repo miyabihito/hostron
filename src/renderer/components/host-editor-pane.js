@@ -10,16 +10,16 @@ module.exports = {
         <button title="save" class="host-editor-pane__btn btn btn-large btn-default"
           :disabled="! editing"
           @click="$emit('save')">
-          <span class="icon icon-pencil"></span>
+          <span class="host-editor-pane__btn-icon icon icon-pencil"></span>
         </button>
         <button title="reset" class="host-editor-pane__btn btn btn-large btn-default"
           :disabled="! editing"
           @click="$emit('reset')">
-          <span class="icon icon-back"></span>
+          <span class="host-editor-pane__btn-icon icon icon-back"></span>
         </button>
         <button title="delete" class="host-editor-pane__btn btn btn-large btn-default"
           @click="$emit('delete')">
-          <span class="icon icon-trash"></span>
+          <span class="host-editor-pane__btn-icon icon icon-trash"></span>
         </button>
       </div>
     </div>

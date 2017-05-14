@@ -45,9 +45,15 @@
 
 .host-editor-pane__btn {
   margin: 5px;
+  cursor: pointer;
 }
 
 .host-editor-pane__btn:disabled {
   background-image: none;
   background-color: #e5e5e5;
+  cursor: not-allowed;
+}
+
+.host-editor-pane__btn-icon {
+  cursor: inherit;
 }

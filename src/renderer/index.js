@@ -48,6 +48,7 @@ module.exports = new Vue({
     deactivateHostItem () {
     },
     editHostItemContent () {
+      this.selectedHostItem.content = this.selectedHostItem.draftContent
     },
     deleteHostItem () {
     }

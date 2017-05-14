@@ -7,7 +7,9 @@ module.exports = {
         class="right-pane__textarea" placeholder="xxx.xxx.xxx.xxx   example.com">
       </textarea>
       <div class="right-pane__btn-pane">
-        <button title="save" class="right-pane__btn btn btn-large btn-default" :disabled="! editing">
+        <button title="save" class="right-pane__btn btn btn-large btn-default"
+          :disabled="! editing"
+          @click="$emit('editcontent')">
           <span class="icon icon-pencil"></span>
         </button>
         <button title="cancel" class="right-pane__btn btn btn-large btn-default" :disabled="! editing">

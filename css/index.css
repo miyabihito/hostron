@@ -46,3 +46,8 @@
 .right-pane__btn {
   margin: 5px;
 }
+
+.right-pane__btn:disabled {
+  background-image: none;
+  background-color: #e5e5e5;
+}

@@ -13,6 +13,7 @@ module.exports = new Vue({
             @select="selectHostItem" @add="addHostItem" @editname="editHostItemName" @activate="activateHostItem" @deactivate="deactivateHostItem">
           </left-pane>
           <right-pane
+            v-model="selectedHostItem.draftContent"
             :selected-host-item="selectedHostItem"
             @editcontent="editHostItemContent" @delete="deleteHostItem">
           </right-pane>
@@ -46,6 +47,7 @@ module.exports = new Vue({
       {
         name: 'default',
         content: 'aaa',
+        draftContent: 'aaa',
         isActive () {
           return true
         }
@@ -53,6 +55,7 @@ module.exports = new Vue({
       {
         name: 'second',
         content: 'bbb',
+        draftContent: 'bbb',
         isActive () {
           return false
         }

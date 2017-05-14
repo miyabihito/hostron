@@ -1,13 +1,16 @@
 module.exports = {
   template: `
     <div class="right-pane pane">
-      <textarea v-model="hostContent" class="right-pane__textarea" placeholder="xxx.xxx.xxx.xxx   example.com">
+      <textarea
+        :value="value"
+        @input="$emit('input', $event.target.value)"
+        class="right-pane__textarea" placeholder="xxx.xxx.xxx.xxx   example.com">
       </textarea>
       <div class="right-pane__btn-pane">
-        <button title="save" class="right-pane__btn btn btn-large btn-default" :disabled="! isHostContentChanged">
+        <button title="save" class="right-pane__btn btn btn-large btn-default" :disabled="! editting">
           <span class="icon icon-pencil"></span>
         </button>
-        <button title="cancel" class="right-pane__btn btn btn-large btn-default" :disabled="! isHostContentChanged">
+        <button title="cancel" class="right-pane__btn btn btn-large btn-default" :disabled="! editting">
           <span class="icon icon-back"></span>
         </button>
         <button title="delete" class="right-pane__btn btn btn-large btn-default">
@@ -17,19 +20,18 @@ module.exports = {
     </div>
   `,
   props: {
+    value: {
+      type: String,
+      default: ''
+    },
     selectedHostItem: {
       type: Object,
       required: true
     }
   },
-  data: function () {
-    return {
-      hostContent: this.selectedHostItem.content
-    }
-  },
   computed: {
-    isHostContentChanged: function () {
-      return this.hostContent !== this.selectedHostItem.content
+    editting: function () {
+      return this.selectedHostItem.draftContent !== this.selectedHostItem.content
     }
   }
 }

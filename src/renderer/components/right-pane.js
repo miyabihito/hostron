@@ -12,7 +12,9 @@ module.exports = {
           @click="$emit('editcontent')">
           <span class="icon icon-pencil"></span>
         </button>
-        <button title="cancel" class="right-pane__btn btn btn-large btn-default" :disabled="! editing">
+        <button title="reset" class="right-pane__btn btn btn-large btn-default"
+          :disabled="! editing"
+          @click="$emit('resetcontent')">
           <span class="icon icon-back"></span>
         </button>
         <button title="delete" class="right-pane__btn btn btn-large btn-default">

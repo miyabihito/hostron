@@ -53,9 +53,9 @@ module.exports = new Vue({
     },
     deleteHostItem () {
       const selectedHostItem = this.selectedHostItem
-      this.hostList = this.hostList.filter(function(hostItem) {
+      this.hostList = this.hostList.filter(function (hostItem) {
         return hostItem !== selectedHostItem
-      });
+      })
       this.selectedHostItem = this.hostList[0]
     }
   },

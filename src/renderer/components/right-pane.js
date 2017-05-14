@@ -17,7 +17,8 @@ module.exports = {
           @click="$emit('resetcontent')">
           <span class="icon icon-back"></span>
         </button>
-        <button title="delete" class="right-pane__btn btn btn-large btn-default">
+        <button title="delete" class="right-pane__btn btn btn-large btn-default"
+          @click="$emit('delete')">
           <span class="icon icon-trash"></span>
         </button>
       </div>

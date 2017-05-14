@@ -54,6 +54,11 @@ module.exports = new Vue({
       this.selectedHostItem.draftContent = this.selectedHostItem.content
     },
     deleteHostItem () {
+      const selectedHostItem = this.selectedHostItem
+      this.hostList = this.hostList.filter(function(hostItem) {
+        return hostItem !== selectedHostItem
+      });
+      this.selectedHostItem = this.hostList[0]
     }
   },
   created: function () {

@@ -2,6 +2,8 @@ const Vue = require('vue/dist/vue.common.js')
 const hostListPane = require('./components/host-list-pane')
 const hostEditorPane = require('./components/host-editor-pane')
 
+const HostItem = require('../host-item')
+
 module.exports = new Vue({
   el: '#app',
   template: `
@@ -30,14 +32,7 @@ module.exports = new Vue({
       this.selectedHostItem = hostItem
     },
     addHostItem () {
-      const newItem = {
-        name: '',
-        content: '',
-        draftContent: '',
-        isActive () {
-          return false
-        }
-      }
+      const newItem = new HostItem()
       this.hostList.push(newItem)
       this.selectedHostItem = newItem
     },
@@ -63,22 +58,8 @@ module.exports = new Vue({
   },
   created: function () {
     this.hostList = [
-      {
-        name: 'default',
-        content: 'aaa',
-        draftContent: 'aaa',
-        isActive () {
-          return true
-        }
-      },
-      {
-        name: 'second',
-        content: 'bbb',
-        draftContent: 'bbb',
-        isActive () {
-          return false
-        }
-      }
+      (new HostItem('original', 'aaa')).activate(),
+      new HostItem('second', 'bbb')
     ]
     this.selectedHostItem = this.hostList[0]
   },

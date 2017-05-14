@@ -25,7 +25,8 @@ module.exports = new Vue({
     selectedHostItem: {}
   },
   methods: {
-    selectHostItem () {
+    selectHostItem (hostItem) {
+      this.selectedHostItem = hostItem
     },
     addHostItem () {
     },

@@ -9,7 +9,7 @@ module.exports = {
           <div class="host-item__checkbox pull-right"><input type="checkbox" :checked="hostItem.isActive()"></div>
         </li>
       </ul>
-      <button class="host-add-btn btn btn-default"><span class="icon icon-plus host-add-btn__icon"></span></button>
+      <button class="host-add-btn btn btn-default" @click="$emit('add')"><span class="icon icon-plus host-add-btn__icon"></span></button>
     </div>
   `,
   props: {

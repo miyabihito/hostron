@@ -30,6 +30,16 @@ module.exports = new Vue({
       this.selectedHostItem = hostItem
     },
     addHostItem () {
+      const newItem = {
+        name: '',
+        content: '',
+        draftContent: '',
+        isActive () {
+          return false
+        }
+      }
+      this.hostList.push(newItem)
+      this.selectedHostItem = newItem
     },
     editHostItemName () {
     },

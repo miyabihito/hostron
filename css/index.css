@@ -1,4 +1,4 @@
-/* left pane */
+/* host list pane */
 .host-item {
   border-top: 0;
   border-bottom: 1px solid #ddd;
@@ -22,12 +22,12 @@
   font-size: 32px;
 }
 
-/* right pane */
-.right-pane {
+/* host editor pane */
+.host-editor-pane {
   padding-bottom: 40px;
 }
 
-.right-pane__textarea {
+.host-editor-pane__textarea {
   box-sizing: border-box;
   width: 100%;
   height: 99%;
@@ -36,18 +36,18 @@
   outline: 0;
 }
 
-.right-pane__btn-pane {
+.host-editor-pane__btn-pane {
   position: absolute;
   bottom: 0;
   right: 5px;
   height: 40px;
 }
 
-.right-pane__btn {
+.host-editor-pane__btn {
   margin: 5px;
 }
 
-.right-pane__btn:disabled {
+.host-editor-pane__btn:disabled {
   background-image: none;
   background-color: #e5e5e5;
 }

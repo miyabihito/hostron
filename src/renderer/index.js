@@ -1,6 +1,6 @@
 const Vue = require('vue/dist/vue.common.js')
-const leftPane = require('./components/left-pane')
-const rightPane = require('./components/right-pane')
+const hostListPane = require('./components/host-list-pane')
+const hostEditorPane = require('./components/host-editor-pane')
 
 module.exports = new Vue({
   el: '#app',
@@ -8,15 +8,15 @@ module.exports = new Vue({
     <div class="window">
       <div class="window-content">
         <div class="pane-group">
-          <left-pane
+          <host-list-pane
             :host-list="hostList" :selected-host-item="selectedHostItem"
             @select="selectHostItem" @add="addHostItem" @editname="editHostItemName" @activate="activateHostItem" @deactivate="deactivateHostItem">
-          </left-pane>
-          <right-pane
+          </host-list-pane>
+          <host-editor-pane
             v-model="selectedHostItem.draftContent"
             :selected-host-item="selectedHostItem"
             @editcontent="editHostItemContent" @resetcontent="resetHostItemDraftContent" @delete="deleteHostItem">
-          </right-pane>
+          </host-editor-pane>
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@ module.exports = new Vue({
     this.selectedHostItem = this.hostList[0]
   },
   components: {
-    leftPane,
-    rightPane
+    hostListPane,
+    hostEditorPane
   }
 })

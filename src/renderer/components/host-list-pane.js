@@ -1,6 +1,6 @@
 module.exports = {
   template: `
-    <div class="left-pane pane pane-sm sidebar">
+    <div class="host-list-pane pane pane-sm sidebar">
       <ul class="list-group">
         <li v-for="hostItem in hostList"
           class="host-item list-group-item" :class="{ active: hostItem === selectedHostItem }"

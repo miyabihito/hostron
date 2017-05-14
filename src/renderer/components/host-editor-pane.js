@@ -1,23 +1,23 @@
 module.exports = {
   template: `
-    <div class="right-pane pane">
+    <div class="host-editor-pane pane">
       <textarea
         :value="value"
         @input="$emit('input', $event.target.value)"
-        class="right-pane__textarea" placeholder="xxx.xxx.xxx.xxx   example.com">
+        class="host-editor-pane__textarea" placeholder="xxx.xxx.xxx.xxx   example.com">
       </textarea>
-      <div class="right-pane__btn-pane">
-        <button title="save" class="right-pane__btn btn btn-large btn-default"
+      <div class="host-editor-pane__btn-pane">
+        <button title="save" class="host-editor-pane__btn btn btn-large btn-default"
           :disabled="! editing"
           @click="$emit('editcontent')">
           <span class="icon icon-pencil"></span>
         </button>
-        <button title="reset" class="right-pane__btn btn btn-large btn-default"
+        <button title="reset" class="host-editor-pane__btn btn btn-large btn-default"
           :disabled="! editing"
           @click="$emit('resetcontent')">
           <span class="icon icon-back"></span>
         </button>
-        <button title="delete" class="right-pane__btn btn btn-large btn-default"
+        <button title="delete" class="host-editor-pane__btn btn btn-large btn-default"
           @click="$emit('delete')">
           <span class="icon icon-trash"></span>
         </button>

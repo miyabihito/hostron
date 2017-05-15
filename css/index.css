@@ -1,4 +1,9 @@
 /* host list pane */
+.host-list {
+  max-height: calc(100% - 41px);
+  overflow-y: scroll;
+}
+
 .host-item {
   border-top: 0;
   border-bottom: 1px solid #ddd;

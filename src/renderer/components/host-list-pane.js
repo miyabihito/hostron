@@ -1,7 +1,7 @@
 module.exports = {
   template: `
     <div class="host-list-pane pane pane-sm sidebar">
-      <ul class="list-group">
+      <ul class="host-list list-group">
         <li v-for="hostItem in hostList"
           class="host-item list-group-item" :class="{ active: hostItem === selectedHostItem }"
           @click="$emit('select', hostItem)" >

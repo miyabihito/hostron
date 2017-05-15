@@ -18,6 +18,7 @@
   padding-top: 3px;
   padding-bottom: 3px;
   border-radius: 0;
+  cursor: pointer;
 }
 
 .host-add-btn .host-add-btn__icon {
@@ -25,6 +26,7 @@
   margin-left: auto;
   margin-right: auto;
   font-size: 32px;
+  cursor: inherit;
 }
 
 /* host editor pane */

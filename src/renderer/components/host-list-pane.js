@@ -3,7 +3,7 @@ module.exports = {
     <div class="host-list-pane pane pane-sm sidebar">
       <ul class="host-list list-group">
         <li v-for="hostItem in hostList"
-          class="host-item list-group-item" :class="{ active: hostItem === selectedHostItem }"
+          class="host-item list-group-item" :class="{ 'host-item_selected': hostItem === selectedHostItem }"
           @click="$emit('select', hostItem)" >
           <div class="host-item__name pull-left">{{ hostItem.name }}</div>
           <div class="host-item__checkbox pull-right">

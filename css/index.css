@@ -9,6 +9,10 @@
   border-bottom: 1px solid #ddd;
 }
 
+.host-item_selected {
+  background-color: #dcdfe1;
+}
+
 .host-item__name {
   width: calc(100% - 20px);
 }

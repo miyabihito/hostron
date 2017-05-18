@@ -17,6 +17,14 @@
   width: calc(100% - 20px);
 }
 
+.host-item__input {
+  width: calc(100% - 20px);
+  background-color: #ffffff;
+  padding: 0;
+  border: 0;
+  outline-width: 0;
+}
+
 .host-add-btn {
   width: 100%;
   padding-top: 3px;

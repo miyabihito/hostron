@@ -12,7 +12,7 @@ module.exports = new Vue({
         <div class="pane-group">
           <host-list-pane
             :host-list="hostList" :selected-host-item="selectedHostItem"
-            @select="selectHostItem" @add="addHostItem" @editname="editHostItemName" @togglestatus="toggleStatus">
+            @select="selectHostItem" @add="addHostItem" @savename="saveHostItemName" @togglestatus="toggleStatus">
           </host-list-pane>
           <host-editor-pane
             v-model="selectedHostItem.draftContent"
@@ -36,7 +36,8 @@ module.exports = new Vue({
       this.hostList.push(newItem)
       this.selectedHostItem = newItem
     },
-    editHostItemName () {
+    saveHostItemName (name) {
+      this.selectedHostItem.name = name
     },
     toggleStatus (hostItem) {
       if (hostItem.isActive()) {

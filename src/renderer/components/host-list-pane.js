@@ -5,7 +5,14 @@ module.exports = {
         <li v-for="hostItem in hostList"
           class="host-item list-group-item" :class="{ 'host-item_selected': hostItem === selectedHostItem }"
           @click="$emit('select', hostItem)" >
-          <div class="host-item__name pull-left">{{ hostItem.name }}</div>
+          <div v-if="hostItem !== hostItemInEdit"
+            class="host-item__name pull-left"
+            @click="editName(hostItem)">
+            {{ hostItem.name !== '' ? hostItem.name : '&nbsp;' }}
+          </div>
+          <input v-else ref="input" type="text" class="host-item__input pull-left"
+            :value="hostItem.name"
+            @change="onInputChange" @blur="onInputBlur">
           <div class="host-item__checkbox pull-right">
             <input type="checkbox" :checked="hostItem.isActive()" @click.stop="$emit('togglestatus', hostItem)">
           </div>
@@ -22,6 +29,28 @@ module.exports = {
     selectedHostItem: {
       type: Object,
       default: null
+    }
+  },
+  data: function () {
+    return {
+      hostItemInEdit: null,
+    }
+  },
+  methods: {
+    editName (hostItem) {
+      if (this.selectedHostItem === hostItem) {
+        this.hostItemInEdit = hostItem
+        this.$nextTick(function () {
+          this.$refs.input[0].focus()
+        })
+      }
+    },
+    onInputChange (event) {
+      this.hostItemInEdit = null
+      this.$emit('savename', event.target.value)
+    },
+    onInputBlur () {
+      this.hostItemInEdit = null
     }
   }
 }

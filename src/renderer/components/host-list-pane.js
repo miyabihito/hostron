@@ -4,7 +4,7 @@ module.exports = {
       <ul class="host-list list-group">
         <li v-for="hostItem in hostList"
           class="host-item list-group-item" :class="{ 'host-item_selected': hostItem === selectedHostItem }"
-          @click="$emit('select', hostItem)" >
+          @click="$emit('select', hostItem)">
           <div v-if="hostItem !== hostItemInEdit"
             class="host-item__name pull-left"
             @click="editName(hostItem)">
@@ -33,7 +33,7 @@ module.exports = {
   },
   data: function () {
     return {
-      hostItemInEdit: null,
+      hostItemInEdit: null
     }
   },
   methods: {

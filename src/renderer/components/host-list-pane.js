@@ -18,7 +18,7 @@ module.exports = {
           </div>
         </li>
       </ul>
-      <button class="host-add-btn btn btn-default" @click="$emit('add')"><span class="icon icon-plus host-add-btn__icon"></span></button>
+      <button class="host-add-btn btn btn-default" @click="addHostItem"><span class="icon icon-plus host-add-btn__icon"></span></button>
     </div>
   `,
   props: {
@@ -37,6 +37,15 @@ module.exports = {
     }
   },
   methods: {
+    addHostItem () {
+      this.$emit('add')
+      this.$nextTick().then(function () {
+        this.hostItemInEdit = this.selectedHostItem
+        return this.$nextTick()
+      }.bind(this)).then(function () {
+        this.$refs.input[0].focus()
+      }.bind(this))
+    },
     editName (hostItem) {
       if (this.selectedHostItem === hostItem) {
         this.hostItemInEdit = hostItem

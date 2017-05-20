@@ -37,14 +37,12 @@ module.exports = {
     }
   },
   methods: {
-    addHostItem () {
+    async addHostItem () {
       this.$emit('add')
-      this.$nextTick().then(function () {
-        this.hostItemInEdit = this.selectedHostItem
-        return this.$nextTick()
-      }.bind(this)).then(function () {
-        this.$refs.input[0].focus()
-      }.bind(this))
+      await this.$nextTick()
+      this.hostItemInEdit = this.selectedHostItem
+      await this.$nextTick()
+      this.$refs.input[0].focus()
     },
     editName (hostItem) {
       if (this.selectedHostItem === hostItem) {

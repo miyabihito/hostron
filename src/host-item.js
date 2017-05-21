@@ -1,9 +1,9 @@
 class HostItem {
-  constructor (name = '', content = '') {
+  constructor ({name = '', content = '', active = false} = {}) {
     this.name = name
     this.content = content
     this.draftContent = this.content
-    this.deactivate()
+    active ? this.activate() : this.deactivate()
   }
 
   get name () {

@@ -62,8 +62,8 @@ module.exports = new Vue({
   },
   created: function () {
     this.hostList = [
-      (new HostItem('original', 'aaa')).activate(),
-      new HostItem('second', 'bbb')
+      new HostItem({name: 'original', content: 'aaa', active: true}),
+      new HostItem({name: 'second', content: 'bbb'})
     ]
     this.selectedHostItem = this.hostList[0]
   },

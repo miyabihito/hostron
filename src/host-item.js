@@ -11,7 +11,7 @@ class HostItem {
   }
 
   set name (name) {
-    this._name = name
+    this._name = String(name)
     return this
   }
 
@@ -20,7 +20,7 @@ class HostItem {
   }
 
   set content (content) {
-    this._content = content
+    this._content = String(content)
     return this
   }
 
@@ -29,7 +29,7 @@ class HostItem {
   }
 
   set draftContent (draftContent) {
-    this._draftContent = draftContent
+    this._draftContent = String(draftContent)
     return this
   }
 

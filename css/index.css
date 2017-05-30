@@ -1,23 +1,23 @@
-/* host list pane */
-.host-list {
+/* hosts list pane */
+.hosts-list {
   max-height: calc(100% - 41px);
   overflow-y: scroll;
 }
 
-.host-item {
+.hosts-item {
   border-top: 0;
   border-bottom: 1px solid #ddd;
 }
 
-.host-item_selected {
+.hosts-item_selected {
   background-color: #dcdfe1;
 }
 
-.host-item__name {
+.hosts-item__name {
   width: calc(100% - 20px);
 }
 
-.host-item__input {
+.hosts-item__input {
   width: calc(100% - 20px);
   background-color: #ffffff;
   padding: 0;
@@ -25,7 +25,7 @@
   outline-width: 0;
 }
 
-.host-add-btn {
+.hosts-add-btn {
   width: 100%;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -33,7 +33,7 @@
   cursor: pointer;
 }
 
-.host-add-btn .host-add-btn__icon {
+.hosts-add-btn .hosts-add-btn__icon {
   float: none;
   margin-left: auto;
   margin-right: auto;
@@ -41,12 +41,12 @@
   cursor: inherit;
 }
 
-/* host editor pane */
-.host-editor-pane {
+/* hosts editor pane */
+.hosts-editor-pane {
   padding-bottom: 40px;
 }
 
-.host-editor-pane__textarea {
+.hosts-editor-pane__textarea {
   box-sizing: border-box;
   width: 100%;
   height: 99%;
@@ -55,24 +55,24 @@
   outline: 0;
 }
 
-.host-editor-pane__btn-pane {
+.hosts-editor-pane__btn-pane {
   position: absolute;
   bottom: 0;
   right: 5px;
   height: 40px;
 }
 
-.host-editor-pane__btn {
+.hosts-editor-pane__btn {
   margin: 5px;
   cursor: pointer;
 }
 
-.host-editor-pane__btn:disabled {
+.hosts-editor-pane__btn:disabled {
   background-image: none;
   background-color: #e5e5e5;
   cursor: not-allowed;
 }
 
-.host-editor-pane__btn-icon {
+.hosts-editor-pane__btn-icon {
   cursor: inherit;
 }

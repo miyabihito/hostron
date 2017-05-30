@@ -1,8 +1,8 @@
 const Vue = require('vue/dist/vue.common.js')
-const hostListPane = require('./components/host-list-pane')
-const hostEditorPane = require('./components/host-editor-pane')
+const hostsListPane = require('./components/hosts-list-pane')
+const hostsEditorPane = require('./components/hosts-editor-pane')
 
-const HostItem = require('../host-item')
+const HostsItem = require('../hosts-item')
 
 module.exports = new Vue({
   el: '#app',
@@ -10,65 +10,65 @@ module.exports = new Vue({
     <div class="window">
       <div class="window-content">
         <div class="pane-group">
-          <host-list-pane
-            :host-list="hostList" :selected-host-item="selectedHostItem"
-            @select="selectHostItem" @add="addHostItem" @savename="saveHostItemName" @togglestatus="toggleStatus">
-          </host-list-pane>
-          <host-editor-pane
-            v-model="selectedHostItem.draftContent"
-            :selected-host-item="selectedHostItem"
-            @save="saveHostItemContent" @reset="resetHostItemDraftContent" @delete="deleteHostItem">
-          </host-editor-pane>
+          <hosts-list-pane
+            :hosts-items="hostsItems" :selected-hosts-item="selectedHostsItem"
+            @select="selectHostsItem" @add="addHostsItem" @savename="saveHostsItemName" @togglestatus="toggleStatus">
+          </hosts-list-pane>
+          <hosts-editor-pane
+            v-model="selectedHostsItem.draftContent"
+            :selected-hosts-item="selectedHostsItem"
+            @save="saveHostsItemContent" @reset="resetHostsItemDraftContent" @delete="deleteHostsItem">
+          </hosts-editor-pane>
         </div>
       </div>
     </div>
   `,
   data: {
-    hostList: [],
-    selectedHostItem: {}
+    hostsItems: [],
+    selectedHostsItem: {}
   },
   methods: {
-    selectHostItem (hostItem) {
-      this.selectedHostItem = hostItem
+    selectHostsItem (hostsItem) {
+      this.selectedHostsItem = hostsItem
     },
-    addHostItem () {
-      const newItem = new HostItem()
-      this.hostList.push(newItem)
-      this.selectedHostItem = newItem
+    addHostsItem () {
+      const newItem = new HostsItem()
+      this.hostsItems.push(newItem)
+      this.selectedHostsItem = newItem
     },
-    saveHostItemName (name) {
-      this.selectedHostItem.name = name
+    saveHostsItemName (name) {
+      this.selectedHostsItem.name = name
     },
-    toggleStatus (hostItem) {
-      if (hostItem.isActive()) {
-        hostItem.deactivate()
+    toggleStatus (hostsItem) {
+      if (hostsItem.isActive()) {
+        hostsItem.deactivate()
       } else {
-        hostItem.activate()
+        hostsItem.activate()
       }
     },
-    saveHostItemContent () {
-      this.selectedHostItem.content = this.selectedHostItem.draftContent
+    saveHostsItemContent () {
+      this.selectedHostsItem.content = this.selectedHostsItem.draftContent
     },
-    resetHostItemDraftContent () {
-      this.selectedHostItem.draftContent = this.selectedHostItem.content
+    resetHostsItemDraftContent () {
+      this.selectedHostsItem.draftContent = this.selectedHostsItem.content
     },
-    deleteHostItem () {
-      const selectedHostItem = this.selectedHostItem
-      this.hostList = this.hostList.filter(function (hostItem) {
-        return hostItem !== selectedHostItem
+    deleteHostsItem () {
+      const selectedHostsItem = this.selectedHostsItem
+      this.hostsItems = this.hostsItems.filter(function (hostsItem) {
+        return hostsItem !== selectedHostsItem
       })
-      this.selectedHostItem = this.hostList[0]
+      this.selectedHostsItem = this.hostsItems[0]
     }
   },
   created: function () {
-    this.hostList = [
-      new HostItem({name: 'original', content: 'aaa', active: true}),
-      new HostItem({name: 'second', content: 'bbb'})
+    this.hostsItems = [
+      new HostsItem({name: 'original', content: 'aaa', active: true}),
+      new HostsItem({name: 'second', content: 'bbb'})
     ]
-    this.selectedHostItem = this.hostList[0]
+    this.selectedHostsItem = this.hostsItems[0]
   },
   components: {
-    hostListPane,
-    hostEditorPane
+    hostsListPane,
+    hostsEditorPane
   }
 })

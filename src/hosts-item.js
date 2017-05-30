@@ -1,4 +1,4 @@
-class HostItem {
+class HostsItem {
   constructor ({name = '', content = '', active = false} = {}) {
     this.name = name
     this.content = content
@@ -48,4 +48,4 @@ class HostItem {
   }
 }
 
-module.exports = HostItem
+module.exports = HostsItem

@@ -1,0 +1,3 @@
+--recursive
+--throw-deprecation
+--use_strict

@@ -15,13 +15,15 @@
   },
   "scripts": {
     "start": "electron .",
-    "lint-js": "standard"
+    "lint-js": "standard --env mocha",
+    "test": "npm run lint-js && mocha"
   },
   "dependencies": {
     "vue": "^2.2.6"
   },
   "devDependencies": {
     "electron": "1.6.2",
+    "mocha": "3.4.2",
     "standard": "9.0.2"
   }
 }

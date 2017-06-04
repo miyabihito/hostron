@@ -2,3 +2,5 @@ node_modules
 .DS_Store
 *.swp
 *.log
+.nyc_output
+coverage

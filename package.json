@@ -16,7 +16,8 @@
   "scripts": {
     "start": "electron .",
     "lint-js": "standard --env mocha",
-    "test": "npm run lint-js && nyc mocha"
+    "test": "npm run lint-js && nyc mocha",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov"
   },
   "dependencies": {
     "vue": "^2.2.6"

@@ -1,3 +1,8 @@
 machine:
   node:
     version: 7.4.0
+
+test:
+  post:
+    - npm run report-coverage
+    - bash <(curl -s https://codecov.io/bash)
